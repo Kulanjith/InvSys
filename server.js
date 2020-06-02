@@ -6,7 +6,7 @@ const app = express();
 
 // middleware port
 var corsOptions = {
-    origin: "http://localhost:3000"
+  origin: "http://localhost:3000",
 };
 
 app.use(cors(corsOptions));
@@ -22,22 +22,21 @@ const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync();
 
-/* Reset database - Delete all records */
+//Reset database - Delete all records
 // db.sequelize.sync({ force: true }).then(() => {
-//     console.log('Drop and Resync Db');
-//     initial();
+//   console.log("Drop and Resync Db");
+//   initial();
 // });
-
 
 // test route
 app.get("/", (req, res) => {
-    res.json({ message: "InvSys Server Running..." });
+  res.json({ message: "InvSys Server Running..." });
 });
 
 // routes
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
-require('./app/routes/item.routes')(app);
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+require("./app/routes/item.routes")(app);
 
 // port 5000 for the server
 const PORT = process.env.PORT || 5000;
@@ -45,23 +44,23 @@ app.listen(PORT, () => console.log(`Server listening on port ${PORT}.`));
 
 // create roles in database
 function initial() {
-    Role.create({
-        id: 1,
-        name: "admin"
-    });
+  Role.create({
+    id: 1,
+    name: "admin",
+  });
 
-    Role.create({
-        id: 2,
-        name: "non-academic"
-    });
+  Role.create({
+    id: 2,
+    name: "non-academic",
+  });
 
-    Role.create({
-        id: 3,
-        name: "academic"
-    });
+  Role.create({
+    id: 3,
+    name: "academic",
+  });
 
-    Role.create({
-        id: 4,
-        name: "student"
-    });
+  Role.create({
+    id: 4,
+    name: "student",
+  });
 }

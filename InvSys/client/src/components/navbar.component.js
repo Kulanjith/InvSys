@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../logo-2.png";
+import logo from "../logo.png";
 
 import AuthService from "../services/auth.service";
 
@@ -46,7 +46,7 @@ class Navbar extends Component {
     } = this.state;
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <button
           className="navbar-toggler"
           type="button"
@@ -62,10 +62,11 @@ class Navbar extends Component {
           <img
             src={logo}
             height="30"
-            width="120"
+            width="30"
             className="d-inline-block align-top mr-2"
             alt="Logo"
           />
+          InvSys
         </a>
         <div className="collapse navbar-collapse" id="navbarColor03">
           <div className="navbar-nav mr-auto">
@@ -99,29 +100,6 @@ class Navbar extends Component {
               </li>
             )}
 
-            {showNonacBoard && (
-              <li className="nav-item">
-                <Link to={"/add-item"} className="nav-link">
-                  Add Items
-                </Link>
-              </li>
-            )}
-
-            {showNonacBoard && (
-              <li className="nav-item">
-                <Link to={"/view-items"} className="nav-link">
-                  View Items
-                </Link>
-              </li>
-            )}
-            {showStudentBoard && (
-              <li className="nav-item">
-                <Link to={"/view-items"} className="nav-link">
-                  View Items
-                </Link>
-              </li>
-            )}
-
             {showAdminBoard && (
               <li className="nav-item">
                 <Link to={"/admin"} className="nav-link">
@@ -136,6 +114,27 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/viewItems"} className="nav-link">
+                  ViewItems
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/viewServices"} className="nav-link">
+                  ViewServices
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/ApprovedRequest"} className="nav-link">
+                  ApprovedRequest
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link to={"/BorrowedItems"} className="nav-link">
+                  BorrowedItems
                 </Link>
               </li>
 

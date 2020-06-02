@@ -17,9 +17,7 @@ import AddItem from "./components/item/add-item.component";
 import ViewItems from "./components/item/list-item.component";
 
 class App extends Component {
-
   render() {
-
     return (
       <Router>
         <div className="App">
