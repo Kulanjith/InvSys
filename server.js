@@ -20,9 +20,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // database sync
 const db = require("./app/models");
 const Role = db.role;
+
 db.sequelize.sync();
 
-//Reset database - Delete all records
+/* Reset database - Delete all records */
 // db.sequelize.sync({ force: true }).then(() => {
 //   console.log("Drop and Resync Db");
 //   initial();
