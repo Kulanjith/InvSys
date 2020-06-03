@@ -190,7 +190,7 @@ export default class ServicesList extends Component {
             ) : (
               <div>
                 <br />
-                <p>Please click on a Item...</p>
+                <p>Please click on a Service...</p>
               </div>
             )}
           </div>

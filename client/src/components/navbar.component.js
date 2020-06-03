@@ -135,6 +135,13 @@ class Navbar extends Component {
                 </Link>
               </li>
             )}
+            {showStudentBoard && (
+              <li className="nav-item">
+                <Link to={"/view-services"} className="nav-link">
+                  View services
+                </Link>
+              </li>
+            )}
 
             {showAdminBoard && (
               <li className="nav-item">
